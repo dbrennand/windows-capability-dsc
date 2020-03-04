@@ -5,14 +5,15 @@ but not WindowsCapability.
 
 I want to install OpenSSH Server!
 
-## Using
+**This has been tested on Azure Stack Hub 1910**
 
-    Configuration SSH {
-        Import-DscResource -ModuleName WindowsCapability
-        Node localhost {
-            WindowsCapabilityResource sshd {
-                Name = "OpenSSH.Server~~~~0.0.1.0"
-                Ensure = "Present"
-            }
-        }
-    }
+## Usage
+
+```powershell
+# Create a zip file which is uploaded using the DSC extension.
+Compress-Archive -Path "windows-capability-dsc\*" -DestinationPath "windows-capability-dsc.zip" -Force
+```
+
+Configure the DSC extension through the portal as follows:
+
+![DSC Extension Config](extension.png)
