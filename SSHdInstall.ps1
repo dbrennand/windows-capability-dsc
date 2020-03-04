@@ -5,5 +5,11 @@ Configuration SSH {
             Name = "OpenSSH.Server~~~~0.0.1.0"
             Ensure = "Present"
         }
+        Service sshd
+        {
+            Name        = "sshd"
+            StartupType = "Automatic"
+            State       = "Running"
+        }
     }
 }
